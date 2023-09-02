@@ -77,7 +77,9 @@
         {#if definition.phonetics.length}
           {#each definition.phonetics as phonetic}
             <div class="phonetic-container">
-              <p class="word-phonetic">[ {phonetic.text} ]</p>
+              {#if phonetic.text}
+                <p class="word-phonetic">[ {phonetic.text} ]</p>
+              {/if}
 
               {#if phonetic.audio}
                 <audio src={phonetic.audio} controls />
